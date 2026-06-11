@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - EduVault</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <header class="admin-header">
+    <h1>EduVault Admin</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main class="admin-main">
+
+    <section class="upload-section">
+      <h2>Upload New Resource</h2>
+
+      <form id="uploadForm">
+        <input type="text" id="title" placeholder="Resource title" required />
+
+        <textarea id="description" placeholder="Resource description"></textarea>
+
+        <select id="subject" required>
+          <option value="">Select Subject</option>
+          <option value="ICT">ICT</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="English">English</option>
+          <option value="French">French</option>
+          <option value="Science">Science</option>
+          <option value="Social Studies">Social Studies</option>
+        </select>
+
+        <select id="level" required>
+          <option value="">Select Level</option>
+          <option value="JHS 1">JHS 1</option>
+          <option value="JHS 2">JHS 2</option>
+          <option value="JHS 3">JHS 3</option>
+          <option value="SHS">SHS</option>
+          <option value="Level 100">Level 100</option>
+        </select>
+
+        <select id="category" required>
+          <option value="">Select Category</option>
+          <option value="Lesson Notes">Lesson Notes</option>
+          <option value="Past Questions">Past Questions</option>
+          <option value="Assignments">Assignments</option>
+          <option value="Slides">Slides</option>
+          <option value="Textbooks">Textbooks</option>
+        </select>
+
+        <select id="fileType" required>
+          <option value="">Select File Type</option>
+          <option value="PDF">PDF</option>
+          <option value="DOCX">DOCX</option>
+          <option value="PPTX">PPTX</option>
+          <option value="ZIP">ZIP</option>
+          <option value="VIDEO">Video</option>
+          <option value="IMAGE">Image</option>
+        </select>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="featured" />
+          Mark as featured
+        </label>
+
+        <input type="file" id="resourceFile" required />
+
+        <button type="submit">Upload Resource</button>
+      </form>
+
+      <p id="uploadMessage"></p>
+    </section>
+
+    <section class="resource-list-section">
+      <h2>Uploaded Resources</h2>
+
+      <div id="adminResourceList">
+        Loading resources...
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Firebase + Admin JS -->
+  <script type="module" src="admin.js"></script>
+
+</body>
+</html>

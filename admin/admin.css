@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #07111f;
+  color: #fff;
+}
+
+/* LOGIN */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, #003cff66, transparent 35%),
+    radial-gradient(circle at bottom right, #00d4ff55, transparent 35%);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 35px;
+  border-radius: 22px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.login-box h1 {
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  color: #cfd8e3;
+  margin-bottom: 25px;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: #101d2f;
+  color: #fff;
+}
+
+form textarea {
+  height: 120px;
+  resize: none;
+}
+
+form button,
+#logoutBtn,
+.delete-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #00aaff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#loginMessage,
+#uploadMessage {
+  margin-top: 15px;
+  color: #00d4ff;
+}
+
+/* DASHBOARD */
+.admin-header {
+  padding: 18px 7%;
+  background: rgba(255, 255, 255, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logoutBtn {
+  width: auto;
+  padding: 10px 20px;
+  background: #ff3b6b;
+}
+
+.admin-main {
+  padding: 40px 7%;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 30px;
+}
+
+.upload-section,
+.resource-list-section {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.upload-section h2,
+.resource-list-section h2 {
+  margin-bottom: 20px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #cfd8e3;
+}
+
+.checkbox-label input {
+  width: auto;
+  margin: 0;
+}
+
+.admin-resource-card {
+  background: #101d2f;
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+
+.admin-resource-card h3 {
+  margin-bottom: 8px;
+}
+
+.admin-resource-card p {
+  color: #cfd8e3;
+  margin-bottom: 10px;
+}
+
+.admin-resource-meta {
+  font-size: 14px;
+  color: #9fb2c8;
+  margin-bottom: 12px;
+}
+
+.delete-btn {
+  background: #ff3b6b;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+  .admin-main {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
