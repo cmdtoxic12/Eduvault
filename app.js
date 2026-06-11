@@ -64,12 +64,16 @@ async function loadResources() {
 function displayResources(resources) {
   resourceContainer.innerHTML = "";
 
-  if (!resources || resources.length === 0) {
-    resourceContainer.innerHTML = `
-      <p class="no-result">No resources found.</p>
-    `;
-    return;
-  }
+ if (!resources || resources.length === 0) {
+  resourceContainer.innerHTML = `
+    <div class="empty-state">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <h3>No resources found</h3>
+      <p>Try another keyword or clear your search.</p>
+    </div>
+  `;
+  return;
+}
 
   resources.forEach((resource) => {
     const card = document.createElement("div");
