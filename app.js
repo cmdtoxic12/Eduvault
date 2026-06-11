@@ -64,8 +64,10 @@ async function loadResources() {
 function displayResources(resources) {
   resourceContainer.innerHTML = "";
 
-  if (!resources.length) {
-    resourceContainer.innerHTML = `<p>No resources found.</p>`;
+  if (!resources || resources.length === 0) {
+    resourceContainer.innerHTML = `
+      <p class="no-result">No resources found.</p>
+    `;
     return;
   }
 
@@ -78,37 +80,36 @@ function displayResources(resources) {
         <i class="${getFileIcon(resource.file_type)}"></i>
       </div>
 
-      <h3>${resource.title}</h3>
+      <h3>${resource.title || "Untitled Resource"}</h3>
 
       <p>${resource.description || "No description available."}</p>
 
       <div class="resource-meta">
-        <span><i class="fa-solid fa-book"></i> ${resource.subject || "General"}</span>
-        <span><i class="fa-solid fa-layer-group"></i> ${resource.level || "All Levels"}</span>
-        <span><i class="fa-solid fa-file"></i> ${resource.file_type || "FILE"}</span>
+        <span>${resource.subject || "General"}</span>
+        <span>${resource.level || "All Levels"}</span>
+        <span>${resource.file_type || "FILE"}</span>
       </div>
 
       <div class="resource-stats">
-        <span><i class="fa-solid fa-download"></i> ${resource.downloads || 0}</span>
-        <span><i class="fa-solid fa-heart"></i> ${resource.likes || 0}</span>
-        <span><i class="fa-solid fa-comment"></i> ${resource.comments || 0}</span>
+        <span>Downloads: ${resource.downloads || 0}</span>
+        <span>Likes: ${resource.likes || 0}</span>
       </div>
 
       <div class="resource-actions">
         <button class="download-btn" onclick="downloadResource('${resource.id}', '${resource.file_url}')">
-          <i class="fa-solid fa-download"></i> Download
+          Download
         </button>
 
         <button class="like-btn" onclick="likeResource('${resource.id}', ${resource.likes || 0})">
-          <i class="fa-solid fa-heart"></i>
+          Like
         </button>
 
         <button class="comment-btn" onclick="openComments('${resource.id}', '${resource.title}')">
-          <i class="fa-solid fa-comment"></i>
+          Comment
         </button>
 
         <button class="share-btn" onclick="shareResource('${resource.id}', '${resource.title}')">
-          <i class="fa-solid fa-share-nodes"></i>
+          Share
         </button>
       </div>
     `;
@@ -116,7 +117,6 @@ function displayResources(resources) {
     resourceContainer.appendChild(card);
   });
 }
-
 // FILE ICONS
 function getFileIcon(type) {
   if (!type) return "fa-solid fa-file";
