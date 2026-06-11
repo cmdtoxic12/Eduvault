@@ -28,6 +28,14 @@ const commentName = document.getElementById("commentName");
 const commentText = document.getElementById("commentText");
 const modalResourceTitle = document.getElementById("modalResourceTitle");
 
+const refreshResourcesBtn = document.getElementById("refreshResourcesBtn");
+
+if (refreshResourcesBtn) {
+  refreshResourcesBtn.addEventListener("click", () => {
+    loadResources();
+  });
+}
+
 let currentResourceId = null;
 let allResources = [];
 
