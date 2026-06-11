@@ -296,7 +296,9 @@ function filterResources() {
 
     return matchesSearch && matchesSubject && matchesLevel && matchesType;
   });
-
+    console.log("Search:", searchValue);
+console.log("Resources:", allResources);
+console.log("Filtered:", filtered);
   displayResources(filtered);
 }
 
