@@ -99,6 +99,20 @@ form button,
   gap: 30px;
 }
 
+.refresh-btn {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #00aaff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background: #0088cc;
+}
+
 .upload-section,
 .resource-list-section {
   background: rgba(255, 255, 255, 0.08);
