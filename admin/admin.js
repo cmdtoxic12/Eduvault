@@ -6,6 +6,14 @@ import {
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+const refreshAdminBtn = document.getElementById("refreshAdminBtn");
+
+if (refreshAdminBtn) {
+  refreshAdminBtn.addEventListener("click", () => {
+    loadAdminResources();
+  });
+}
+
 /* FIREBASE CONFIG */
 const firebaseConfig = {
   apiKey: "AIzaSyCp0KbklA4vyL-4LMSY3y_SFU_W8yCspgU",
