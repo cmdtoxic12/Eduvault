@@ -38,6 +38,20 @@ body {
   font-size: 24px;
 }
 
+.refresh-btn {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #00aaff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background: #0088cc;
+}
+
 .nav-links a {
   color: #fff;
   text-decoration: none;
