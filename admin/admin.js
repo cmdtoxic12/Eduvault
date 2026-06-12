@@ -225,14 +225,71 @@ async function loadAdminResources() {
         Likes: ${resource.likes || 0}
       </div>
     </div>
-      <button class="delete-btn" onclick="deleteResource('${resource.id}', '${resource.file_url}')">
-        Delete
-      </button>
+     <div class="admin-card-actions">
+  <button class="edit-btn" onclick='openEditModal(${JSON.stringify(resource)})'>
+    Edit
+  </button>
+
+  <button class="delete-btn" onclick="deleteResource('${resource.id}', '${resource.file_url}')">
+    Delete
+  </button>
+</div>
     `;
 
     adminResourceList.appendChild(card);
   });
 }
+
+const editModal = document.getElementById("editModal");
+const closeEditModal = document.getElementById("closeEditModal");
+const editForm = document.getElementById("editForm");
+
+window.openEditModal = function (resource) {
+  editModal.style.display = "flex";
+
+  document.getElementById("editId").value = resource.id;
+  document.getElementById("editTitle").value = resource.title || "";
+  document.getElementById("editDescription").value = resource.description || "";
+  document.getElementById("editSubject").value = resource.subject || "";
+  document.getElementById("editLevel").value = resource.level || "";
+  document.getElementById("editCategory").value = resource.category || "";
+  document.getElementById("editFileType").value = resource.file_type || "";
+  document.getElementById("editFeatured").checked = resource.featured || false;
+};
+
+closeEditModal.addEventListener("click", () => {
+  editModal.style.display = "none";
+});
+
+editForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const id = document.getElementById("editId").value;
+
+  const updatedResource = {
+    title: document.getElementById("editTitle").value.trim(),
+    description: document.getElementById("editDescription").value.trim(),
+    subject: document.getElementById("editSubject").value.trim(),
+    level: document.getElementById("editLevel").value.trim(),
+    category: document.getElementById("editCategory").value.trim(),
+    file_type: document.getElementById("editFileType").value.trim(),
+    featured: document.getElementById("editFeatured").checked
+  };
+
+  const { error } = await client
+    .from("resources")
+    .update(updatedResource)
+    .eq("id", id);
+
+  if (error) {
+    alert(error.message);
+    return;
+  }
+
+  alert("Resource updated successfully.");
+  editModal.style.display = "none";
+  loadAdminResources();
+});
 
 /* DELETE RESOURCE */
 window.deleteResource = async function (id, fileUrl) {
