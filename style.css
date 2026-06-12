@@ -50,6 +50,7 @@ body {
   color: #fff;
   font-weight: bold;
   cursor: pointer;
+  align-items: center;
 }
 .refresh-btn:hover {
   background: #0088cc;
