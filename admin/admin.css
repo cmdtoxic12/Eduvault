@@ -171,6 +171,19 @@ form button,
   background: #ff3b6b;
 }
 
+.resource-list-section {
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#adminResourceList {
+  max-height: 65vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
 /* MOBILE */
 @media (max-width: 850px) {
   .admin-main {
