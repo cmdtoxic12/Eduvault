@@ -146,6 +146,44 @@ form button,
 }
 
 .admin-resource-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #101d2f;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.admin-resource-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-resource-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-resource-info p {
+  font-size: 13px;
+  color: #cfd8e3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete-btn {
+  width: auto;
+  padding: 9px 14px;
+  flex-shrink: 0;
+}
+
+.admin-resource-card {
   background: #101d2f;
   padding: 18px;
   border-radius: 16px;
