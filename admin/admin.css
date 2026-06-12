@@ -210,7 +210,7 @@ form button,
 }
 
 .resource-list-section {
-  max-height: 100vh;
+  max-height: 130vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
