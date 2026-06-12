@@ -38,6 +38,18 @@ body {
   font-size: 24px;
 }
 
+.site-logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .refresh-btn {
   padding: 13px 20px;
   border: none;
