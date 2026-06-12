@@ -209,10 +209,10 @@ async function loadAdminResources() {
     card.className = "admin-resource-card";
 
     card.innerHTML = `
+    <div class="admin-resource-info">
       <h3>${resource.title}</h3>
 
       <p>${resource.description || "No description"}</p>
-
       <div class="admin-resource-meta">
         ${resource.subject || "General"} |
         ${resource.level || "All Levels"} |
@@ -224,7 +224,7 @@ async function loadAdminResources() {
         Downloads: ${resource.downloads || 0} |
         Likes: ${resource.likes || 0}
       </div>
-
+    </div>
       <button class="delete-btn" onclick="deleteResource('${resource.id}', '${resource.file_url}')">
         Delete
       </button>
