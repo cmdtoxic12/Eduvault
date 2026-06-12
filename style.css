@@ -39,14 +39,14 @@ body {
 }
 
 .site-logo {
-  width: 500px;
+  width: 400px;
   height: 200px;
   object-fit: contain;
 }
 
 .logo-box {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 10px;
 }
 
