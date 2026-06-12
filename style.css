@@ -455,6 +455,30 @@ body {
     flex-direction: column;
   }
 
+  .legal-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  color: white;
+}
+
+.legal-container h1 {
+  margin-bottom: 20px;
+  color: #00d4ff;
+}
+
+.legal-container h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.legal-container p {
+  line-height: 1.8;
+  color: #d6d6d6;
+}
+
   .footer {
     flex-direction: column;
     text-align: center;
