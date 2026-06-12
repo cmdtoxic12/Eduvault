@@ -23,6 +23,46 @@ body {
   z-index: 100;
 }
 
+.theme-toggle {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  background: #00aaff;
+  color: white;
+}
+
+/* LIGHT THEME */
+body.light-theme {
+  background: #f5f7fb;
+  color: #111;
+}
+
+body.light-theme .site-header,
+body.light-theme .resource-card,
+body.light-theme .upload-section,
+body.light-theme .resource-list-section,
+body.light-theme .stats div {
+  background: white;
+  color: #111;
+}
+
+body.light-theme .resource-card p,
+body.light-theme .about p {
+  color: #555;
+}
+
+body.light-theme .nav-links a {
+  color: #111;
+}
+
+body.light-theme .filters select {
+  background: white;
+  color: #111;
+}
+
 .logo-box {
   display: flex;
   align-items: left;
