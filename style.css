@@ -31,8 +31,8 @@ body {
 
 
 .site-logo {
-  width: 400px;
-  height: 200px;
+  width: 350px;
+  height: 150px;
   object-fit: contain;
 }
 
@@ -54,7 +54,7 @@ body {
 }
 .refresh-btn:hover {
   background: #0088cc;
-}
+
 
 .nav-links a {
   color: #fff;
