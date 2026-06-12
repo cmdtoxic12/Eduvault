@@ -121,6 +121,50 @@ form button,
   background: #0088cc;
 }
 
+.admin-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  width: auto;
+  padding: 9px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #00aaff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #101d2f;
+  width: 100%;
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
 .upload-section,
 .resource-list-section {
   background: rgba(255, 255, 255, 0.08);
