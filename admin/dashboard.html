@@ -90,6 +90,34 @@
 
   </main>
 
+  <div class="modal" id="editModal">
+  <div class="modal-content">
+    <span class="close-modal" id="closeEditModal">&times;</span>
+
+    <h2>Edit Resource</h2>
+
+    <form id="editForm">
+      <input type="hidden" id="editId">
+
+      <input type="text" id="editTitle" placeholder="Title" required>
+
+      <textarea id="editDescription" placeholder="Description"></textarea>
+
+      <input type="text" id="editSubject" placeholder="Subject">
+      <input type="text" id="editLevel" placeholder="Level">
+      <input type="text" id="editCategory" placeholder="Category">
+      <input type="text" id="editFileType" placeholder="File Type">
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="editFeatured">
+        Featured
+      </label>
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
   <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
