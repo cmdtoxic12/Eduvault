@@ -40,6 +40,12 @@ body {
   margin-bottom: 25px;
 }
 
+.site-logo {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+}
+
 form input,
 form textarea,
 form select {
