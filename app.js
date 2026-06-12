@@ -105,15 +105,16 @@ function displayResources(resources) {
         </button>
 
         <button class="like-btn" onclick="likeResource('${resource.id}', ${resource.likes || 0})">
-          Like
+         <i class="fa fa-heart" aria-hidden="true"></i>
+
         </button>
 
         <button class="comment-btn" onclick="openComments('${resource.id}', '${resource.title}')">
-          Comment
+          <i class="fa fa-comments" aria-hidden="true"></i>
         </button>
 
         <button class="share-btn" onclick="shareResource('${resource.id}', '${resource.title}')">
-          Share
+         <i class="fa fa-share-alt" aria-hidden="true"></i>
         </button>
       </div>
     `;
