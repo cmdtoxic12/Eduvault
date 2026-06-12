@@ -14,7 +14,7 @@ body {
 .site-header {
   display: flex;
   justify-content: space-between;
-  align-items: left;
+  align-items: center;
   padding: 18px 7%;
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(15px);
@@ -25,18 +25,10 @@ body {
 
 .logo-box {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 10px;
 }
 
-.logo-box i {
-  color: #00d4ff;
-  font-size: 28px;
-}
-
-.logo-box h1 {
-  font-size: 24px;
-}
 
 .site-logo {
   width: 400px;
@@ -59,7 +51,6 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
-
 .refresh-btn:hover {
   background: #0088cc;
 }
