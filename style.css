@@ -116,6 +116,7 @@ body.light-theme .filters select {
   font-weight: bold;
   cursor: pointer;
   margin-left: 10vh;
+  margin-bottom: 20px;
   align-items: center;
 }
 
