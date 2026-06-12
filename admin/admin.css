@@ -217,7 +217,7 @@ form button,
 }
 
 #adminResourceList {
-  max-height: 110vh;
+  max-height: 130vh;
   overflow-y: auto;
   padding-right: 8px;
 }
