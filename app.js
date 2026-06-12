@@ -139,18 +139,28 @@ function getFileIcon(type) {
 }
 
 // DOWNLOAD RESOURCE
-async function downloadResource(id, fileUrl) {
+async function downloadResource(id, fileUrl, fileName = "resource") {
+  if (!fileUrl) {
+    alert("File link not found.");
+    return;
+  }
+
   const resource = allResources.find((item) => item.id === id);
-  const newDownloads = (resource?.downloads || 0) + 1;
+  const newDownloads = Number(resource?.downloads || 0) + 1;
 
   await client
     .from("resources")
     .update({ downloads: newDownloads })
     .eq("id", id);
 
-  window.open(fileUrl, "_blank");
+  const link = document.createElement("a");
+  link.href = fileUrl;
+  link.download = fileName;
+  link.target = "_blank";
 
-  loadResources();
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 // LIKE RESOURCE
