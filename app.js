@@ -154,7 +154,8 @@ async function downloadResource(id, fileUrl, fileName = "resource") {
     .eq("id", id);
 
   const link = document.createElement("a");
-  link.href = fileUrl;
+  const downloadUrl = `${fileUrl}?download=`;
+  link.href = downloadUrl;
   link.download = fileName;
   link.target = "_blank";
 
@@ -383,11 +384,14 @@ function loadFeatured(resources) {
       <h3>${resource.title}</h3>
       <p>${resource.description || "No description available."}</p>
 
-      <div class="resource-actions">
-        <button class="download-btn" onclick="downloadResource('${resource.id}', '${resource.file_url}')">
-          Download
-        </button>
-      </div>
+     <button class="download-btn"
+onclick="downloadResource(
+'${resource.id}',
+'${resource.file_url}',
+'${resource.file_name}'
+)">
+Download
+</button>
     `;
 
     featuredResources.appendChild(card);
