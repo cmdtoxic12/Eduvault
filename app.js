@@ -383,7 +383,7 @@ function loadFeatured(resources) {
 
       <h3>${resource.title}</h3>
       <p>${resource.description || "No description available."}</p>
-
+<div class="resource-actions">
      <button class="download-btn"
 onclick="downloadResource(
 '${resource.id}',
@@ -392,6 +392,7 @@ onclick="downloadResource(
 )">
 Download
 </button>
+</div>
     `;
 
     featuredResources.appendChild(card);
