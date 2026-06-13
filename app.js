@@ -102,6 +102,9 @@ function displayResources(resources) {
       <div class="resource-actions">
         <button class="download-btn" onclick="downloadResource('${resource.id}', '${resource.file_url}')">
           Download
+          <button class="preview-btn" onclick="location.href='/resource.html?id=${resource.id}'">
+  Preview
+</button>
         </button>
 
         <button class="like-btn" onclick="likeResource('${resource.id}', ${resource.likes || 0})">
