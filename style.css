@@ -559,6 +559,15 @@ body.light-theme .filters select {
   border-radius: 20px;
 }
 
+.preview-btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 11px 13px;
+  background: #7c5cff;
+  color: #fff;
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
   .site-header {
