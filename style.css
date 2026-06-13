@@ -24,6 +24,23 @@ body {
   min-height: 70px;
 }
 
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-text h1 {
+    margin: 0;
+    line-height: 1;
+}
+
+.brand-text p {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    color: #00d4ff;
+    letter-spacing: 2px;
+}
+
 .theme-toggle {
   width: 40px;
   height: 40px;
