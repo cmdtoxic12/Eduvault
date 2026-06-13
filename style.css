@@ -300,7 +300,8 @@ body.light-theme .filters select {
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+  gap: 20px;
+  align-items: stretch;
 }
 
 .resource-card {
@@ -309,6 +310,12 @@ body.light-theme .filters select {
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  height: auto;
+  width: auto;
 }
 
 .resource-card:hover {
@@ -355,8 +362,9 @@ body.light-theme .filters select {
 
 .resource-actions {
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .resource-actions button {
@@ -366,6 +374,7 @@ body.light-theme .filters select {
   padding: 11px 13px;
   background: #101d2f;
   color: #fff;
+  flex-shrink: 0;
 }
 
 .download-btn {
