@@ -41,11 +41,12 @@ async function loadResourcePreview() {
       <div class="preview-box">
         ${getPreview(resource)}
       </div>
-
+    <div class="resource-actions">
       <button class="download-btn"
         onclick="downloadResource('${resource.id}', '${resource.file_url}', '${resource.file_name}')">
         Download Resource
       </button>
+      </div>
     </div>
   `;
 }
