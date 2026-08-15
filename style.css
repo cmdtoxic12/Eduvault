@@ -668,3 +668,133 @@ body.light-theme .filters select {
     height: 38px;
   }
 }
+/* ========== IMPROVED CARDS & ACTIONS ========== */
+.resource-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.resource-actions button {
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #101d2f;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.25s;
+}
+
+.download-btn {
+  flex: 1;
+  background: #00aaff !important;
+  font-weight: 600;
+}
+
+.preview-btn {
+  background: #7c5cff !important;
+}
+
+.like-btn:hover { background: #ff3b6b !important; }
+.comment-btn:hover { background: #7c5cff !important; }
+.share-btn:hover { background: #00c853 !important; }
+
+/* Skeleton loading */
+.skeleton-card {
+  pointer-events: none;
+}
+.skeleton-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  margin-bottom: 15px;
+  animation: pulse 1.4s infinite;
+}
+.skeleton-line {
+  height: 14px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  animation: pulse 1.4s infinite;
+}
+.skeleton-line.title { width: 70%; height: 20px; }
+.skeleton-line.short { width: 40%; }
+.skeleton-meta {
+  height: 30px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  margin-top: 15px;
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Light theme adjustments */
+body.light-theme .resource-actions button {
+  background: #e8eef7;
+  color: #111;
+}
+body.light-theme .download-btn {
+  background: #00aaff !important;
+  color: white !important;
+}
+body.light-theme .preview-btn {
+  background: #7c5cff !important;
+  color: white !important;
+}
+
+/* Better empty state */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #cfd8e3;
+}
+.empty-state i {
+  font-size: 48px;
+  color: #00d4ff;
+  margin-bottom: 18px;
+}
+
+/* Load more button polish */
+.load-more-btn {
+  display: none; /* controlled by JS */
+  margin: 40px auto 0;
+  padding: 14px 36px;
+  border-radius: 30px;
+  border: none;
+  background: #00aaff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.load-more-btn:hover {
+  background: #0088cc;
+  transform: translateY(-2px);
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+  .resource-actions {
+    gap: 6px;
+  }
+  .resource-actions button {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .download-btn {
+    flex: 1 1 100%;
+  }
+}
