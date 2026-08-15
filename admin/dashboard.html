@@ -5,25 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard - EduVault</title>
   <link rel="stylesheet" href="admin.css" />
-   <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
   <header class="admin-header">
-     <img src="/logo.png" alt="EduVault Logo" class="site-logo">
-    <h1>EduVault Admin</h1>
-    <button id="logoutBtn">Logout</button>
+    <div class="admin-header-left">
+      <img src="/logo.png" alt="EduVault Logo" class="site-logo">
+      <h1>EduVault Admin</h1>
+    </div>
+    <button id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
   </header>
 
   <main class="admin-main">
 
+    <!-- UPLOAD -->
     <section class="upload-section">
-      <h2>Upload New Resource</h2>
+      <h2><i class="fa-solid fa-cloud-arrow-up"></i> Upload New Resource</h2>
 
       <form id="uploadForm">
         <input type="text" id="title" placeholder="Resource title" required />
-
-        <textarea id="description" placeholder="Resource description"></textarea>
+        <textarea id="description" placeholder="Short description..."></textarea>
 
         <select id="subject" required>
           <option value="">Select Subject</option>
@@ -66,24 +69,26 @@
 
         <label class="checkbox-label">
           <input type="checkbox" id="featured" />
-          Mark as featured
+          Mark as Featured
         </label>
 
         <input type="file" id="resourceFile" required />
 
-        <button type="submit">Upload Resource</button>
+        <button type="submit"><i class="fa-solid fa-upload"></i> Upload Resource</button>
       </form>
 
       <p id="uploadMessage"></p>
     </section>
 
+    <!-- LIST -->
     <section class="resource-list-section">
-      <h2>Uploaded Resources</h2>
-
+      <div class="resource-list-header">
+        <h2><i class="fa-solid fa-folder-open"></i> Uploaded Resources</h2>
         <button id="refreshAdminBtn" class="refresh-btn">
-  Refresh List
-</button>
-      
+          <i class="fa-solid fa-rotate-right"></i> Refresh
+        </button>
+      </div>
+
       <div id="adminResourceList">
         Loading resources...
       </div>
@@ -91,39 +96,32 @@
 
   </main>
 
+  <!-- EDIT MODAL -->
   <div class="modal" id="editModal">
-  <div class="modal-content">
-    <span class="close-modal" id="closeEditModal">&times;</span>
+    <div class="modal-content">
+      <span class="close-modal" id="closeEditModal">&times;</span>
+      <h2>Edit Resource</h2>
 
-    <h2>Edit Resource</h2>
+      <form id="editForm">
+        <input type="hidden" id="editId">
+        <input type="text" id="editTitle" placeholder="Title" required>
+        <textarea id="editDescription" placeholder="Description"></textarea>
+        <input type="text" id="editSubject" placeholder="Subject">
+        <input type="text" id="editLevel" placeholder="Level">
+        <input type="text" id="editCategory" placeholder="Category">
+        <input type="text" id="editFileType" placeholder="File Type">
 
-    <form id="editForm">
-      <input type="hidden" id="editId">
+        <label class="checkbox-label">
+          <input type="checkbox" id="editFeatured">
+          Featured
+        </label>
 
-      <input type="text" id="editTitle" placeholder="Title" required>
-
-      <textarea id="editDescription" placeholder="Description"></textarea>
-
-      <input type="text" id="editSubject" placeholder="Subject">
-      <input type="text" id="editLevel" placeholder="Level">
-      <input type="text" id="editCategory" placeholder="Category">
-      <input type="text" id="editFileType" placeholder="File Type">
-
-      <label class="checkbox-label">
-        <input type="checkbox" id="editFeatured">
-        Featured
-      </label>
-
-      <button type="submit">Save Changes</button>
-    </form>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
   </div>
-</div>
 
-  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-  <!-- Firebase + Admin JS -->
   <script type="module" src="admin.js"></script>
-
 </body>
 </html>
